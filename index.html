@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sou lindo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/estilo-check.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body> 
+
+    <header class="cabecalho">
+		<nav class="navbar navbar-expand-md navbar-dark fixed">
+		<a class="navbar-brand">Clínica Spring Security</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarCollapse" aria-controls="navbarCollapse"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown" sec:authorize="hasAnyAuthority('PACIENTE')"><a
+						class="btn  dropdown-toggle" href="#" id="dropdown03"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#DCDCDC">Pacientes</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown03">
+							<a class="dropdown-item" th:href="@{/pacientes/dados}">Cadastrar Dados</a>
+							<a class="dropdown-item" th:href="@{/u/editar/senha}">Editar Senha</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" th:href="@{/agendamentos/agendar}">Agendar Consulta</a>
+							<a class="dropdown-item" th:href="@{/agendamentos/historico/paciente}">Histórico de Consultas</a>
+						</div>
+					</li>		
+                </ul>
+            </div>   
+        </nav>
+    </header>  
+
+    <section class="layout-content" layout:fragment="corpo">
+		<main role="main">
+
+			<section class="clinica text-center">
+				<img class="d-block mx-auto" src="image/spring-security.png"
+					width="72" height="72">
+				<div class="container">
+					<h1 class="jumbotron-heading">Clínica Spring Security</h1>
+					<p class="lead text-muted">Check-Ups</p>
+				</div>
+			</section>
+
+			<div class="conteudo album py-5 ">
+				<div class="container">
+
+					<div class="d-flex justify-content-center">
+						<div class="col-md-8">
+
+							<div th:replace="fragments/alert  :: alerta-sucesso"></div>
+
+							<div class="add-toast position-absolute" aria-live="polite"
+								aria-atomic="true" style="top: 0px; right: 20px;">
+								<!--toast-->
+							</div>
+							
+			
+
+                            <div class="subtitulo-check-up">
+                                <p>O check-up é um conjunto de consultas e exames que te previne de doenças
+                                    precocos. A Clínica Spring-security oferece check-ups sob medida para sua 
+                                    necessidade, encontre o ideal para você.
+                                </p>
+                            </div>
+
+                            <div class="tipos">
+                                <h2>Tipos de Check-Ups</h2>
+                                <ul>
+                                    <li>Check-Up Básico
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Hemograma</li>
+                                            <li>Glicemia</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                    <li>Check-Up Esportista
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                    <li>Check-Up Homem > 50
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                    <li>Check-Up Mulher
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                    <li>Check-Up Mulher > 50
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                    <li>Check-Up Mulher > 65
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                    <li>Check-Up Preventivo
+                                        <ul>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                            <li>Consulta Clínica Médica</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+						</div>
+					</div>
+				</div>
+            </div>
+            
+            <div class="conteudo album py-5 ">
+                <h3>Últimas notícias</h3>
+
+                <div class="container">
+                    <div class="card card_01">
+                        <a href="https://g1.globo.com/mundo/noticia/2020/03/20/numero-de-mortos-na-italia-por-novo-coronavirus-passa-de-4-mil.ghtml" target="_blank">
+                            <img src="image/italia.jpg" alt="">
+                            <p>Itália tem 627 mortes por vírus em um dia, e total ultrapassa 4 mil</p>
+                        </a>
+                    </div>
+    
+                    <div class="card card_02">
+                        <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/20/ritmo-de-contagio-do-coronavirus-no-brasil-esta-igual-ao-registrado-na-italia-e-acelerando-aponta-unesp.ghtml" target="_blank">
+                            <img src="image/grafico.jpg"alt="" height="236px">
+                            <p>Ritmo de contágio no Brasil está igual ao da Itália, diz estudo</p>
+                        </a>
+                    </div>
+    
+                    <div class="card card_03">
+                        <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/20/ultimas-noticias-de-coronavirus-de-20-de-marco.ghtml" target="_blank">
+                            <img src="image/sp.jpg" alt="">
+                            <p>Mais de 10 mil pessoas morreram no mundo pelo coronavírus</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+		</main>
+
+    </section>
+    
+    <footer class="layout-footer stylish-color-dark pt-4"
+		th:fragment="rodape">
+		<section>
+
+			<div class ="rede" id="facebook">
+			<a href="https://www.facebook.com/" target="_blank">
+				<img class="icone" src="image/facebook.png"/>
+				</a>
+			</div>
+
+			<div class="rede" id="instagram">
+			<a href="https://www.instagram.com/" target="_blank">
+				<img class="icone" src="image/instagram.png" />
+				</a>
+            </div>
+            
+            
+        
+            <div class="duvidas">
+                <h3>Alguma dúvida amigo ??</h3>
+                <a href="https://api.whatsapp.com/send?phone=INSIRA SEU NÚMERO DE WHATSAPP AQUI&text=Queria uma informação sobre um produto" target="_blank"><img  class="whatsapp" src="https://3.bp.blogspot.com/-ckiKOobNJy8/XRIGyySxDII/AAAAAAAACv0/09JFzT4vlcUYHq19lu-pQfWjYq6dyKYzQCLcBGAs/s1600/contatowhats.png" /></a>
+            </div>
+			
+	<div class="a">		
+		<a><i class="far fa-copyright"></i> Clinica Spring Security@2020 - Todos Direitos Reservados </a>
+    </div>
+    
+	
+		</section>
+	</footer>
+</body>
+</html>
